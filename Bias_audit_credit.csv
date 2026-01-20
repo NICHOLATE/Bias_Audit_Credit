@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Example fairness metrics dictionary (replace with your actual results)
+results = {
+    "Baseline": {"Accuracy": 0.82, "ROC_AUC": 0.85, "DI": 0.65, "DPD": -0.12, "EOD": -0.08},
+    "Oversampling": {"Accuracy": 0.80, "ROC_AUC": 0.83, "DI": 0.95, "DPD": -0.02, "EOD": -0.01},
+    "Threshold Adj.": {"Accuracy": 0.81, "ROC_AUC": 0.84, "DI": 0.85, "DPD": -0.05, "EOD": -0.03}
+}
+
+df = pd.DataFrame(results).T
+
+# Save to CSV
+df.to_csv("fairness_results.csv", index=True)
+
+print("CSV file 'fairness_results.csv' created with fairness metrics.")
